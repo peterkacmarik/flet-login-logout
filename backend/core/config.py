@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int
     SECRET_KEY: str
     DOMAIN: str
-    SQLALCHEMY_DATABASE_URL: str
+    SQLALCHEMY_DATABASE_URL: str = 'sqlite+aiosqlite:///./backend/database/db.db'
     BASE_URL: str
     
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
