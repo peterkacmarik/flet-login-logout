@@ -1,1 +1,0 @@
-# Trasy pre správu používateľov
