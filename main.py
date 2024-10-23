@@ -36,19 +36,19 @@ def start_flet_app():
     
     ft.app(target=main, assets_dir="frontend/assets", view=ft.AppView.FLET_APP)
 
-def start_fastapi():
-    # Spustenie FastAPI servera
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+# def start_fastapi():
+#     # Spustenie FastAPI servera
+#     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
 
 if __name__ == "__main__":
     # Vytvorenie procesov pre FastAPI a Flet
-    fastapi_process = multiprocessing.Process(target=start_fastapi)
+    # fastapi_process = multiprocessing.Process(target=start_fastapi)
     flet_process = multiprocessing.Process(target=start_flet_app)
 
     # Spustenie procesov
-    fastapi_process.start()
+    # fastapi_process.start()
     flet_process.start()
 
     # Čakanie na dokončenie procesov
-    fastapi_process.join()
+    # fastapi_process.join()
     flet_process.join()
